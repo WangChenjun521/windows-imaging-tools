@@ -1195,7 +1195,7 @@ function Wait-ForVMShutdown {
         $isOff =  $vmState -eq "Off"
         try {
             if ($vmState -ne "Running" -or `
-                !(Get-VMIntegrationService $Name -Name "Key-Value Pair Exchange").Enabled) {
+                !(Get-VMIntegrationService $Name | Where-Object Id -Match "2A34B1C2-FD73-4043-8A5B-DD2159BC743F").Enabled) {
                 continue
             }
             $currentVMMessages = Get-KVPData -VMName $Name
