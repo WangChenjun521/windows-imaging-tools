@@ -100,13 +100,13 @@
             <!-- Use FirstLogonCommands instead of LogonCommands if you don't need to install Windows Updates -->
             <LogonCommands>
                 <AsynchronousCommand wcm:action="add">
-                    <CommandLine>%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell -NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -File %SystemDrive%\UnattendResources\Logon.ps1</CommandLine>
+                    <CommandLine>%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell -NoLogo -NonInteractive -ExecutionPolicy Bypass -File %SystemDrive%\UnattendResources\Logon.ps1</CommandLine>
                     <Order>1</Order>
                 </AsynchronousCommand>
             </LogonCommands>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell -NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -File %SystemDrive%\UnattendResources\FirstLogon.ps1</CommandLine>
+                    <CommandLine>%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell -NoLogo -NonInteractive -ExecutionPolicy Bypass -File %SystemDrive%\UnattendResources\FirstLogon.ps1</CommandLine>
                     <Order>1</Order>
                 </SynchronousCommand>
             </FirstLogonCommands>
@@ -143,11 +143,16 @@
             <ComputerName>*</ComputerName>
         </component>
         <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <InputLocale>en-US</InputLocale>
+            <!-- <InputLocale>en-US</InputLocale>
             <UILanguage>en-US</UILanguage>
             <UILanguageFallback>en-us</UILanguageFallback>
             <SystemLocale>en-US</SystemLocale>
-            <UserLocale>en-US</UserLocale>
+            <UserLocale>en-US</UserLocale> -->
+            <InputLocale>zh-CN</InputLocale>
+            <UILanguage>zh-CN</UILanguage>
+            <UILanguageFallback>zh-CN</UILanguageFallback>
+            <SystemLocale>zh-CNS</SystemLocale>
+            <UserLocale>zh-CN</UserLocale>
         </component>
     </settings>
     <settings pass="specialize">
