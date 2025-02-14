@@ -64,12 +64,17 @@
         </component>
         <component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <SetupUILanguage>
-                <UILanguage>en-US</UILanguage>
+                <!-- <UILanguage>en-US</UILanguage> -->
+                <UILanguage>zh-CN</UILanguage>
             </SetupUILanguage>
-            <InputLocale>en-US</InputLocale>
+            <!-- <InputLocale>en-US</InputLocale>
             <UILanguage>en-US</UILanguage>
             <SystemLocale>en-US</SystemLocale>
-            <UserLocale>en-US</UserLocale>
+            <UserLocale>en-US</UserLocale> -->
+            <InputLocale>zh-CN</InputLocale>
+            <UILanguage>zh-CN</UILanguage>
+            <SystemLocale>zh-CNS</SystemLocale>
+            <UserLocale>zh-CN</UserLocale>
         </component>
     </settings>
     <settings pass="oobeSystem">
@@ -182,7 +187,7 @@
             <RunSynchronous>
                 <RunSynchronousCommand wcm:action="add">
                     <Order>1</Order>
-                    <Path>powershell -NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -File %SystemDrive%\UnattendResources\Specialize.ps1</Path>
+                    <Path>powershell -NoLogo -NonInteractive -ExecutionPolicy Bypass -File %SystemDrive%\UnattendResources\Specialize.ps1</Path>
                     <Description>Run Specialize script</Description>
                 </RunSynchronousCommand>
             </RunSynchronous>
